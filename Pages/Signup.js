@@ -52,7 +52,7 @@ export default function Signup({navigation}) {
                         placeholderTextColor="white"
                         onChangeText={text => setPassword(text)} />
                 </View>
-                <TouchableOpacity
+                <TouchableOpacity onPress={() => {navigation.navigate('Login'), alert('Account Created Succesfully')}}
                     style={styles.loginBtn}>
                     <Text style={styles.loginText}>CREATE AN ACCOUNT</Text>
                 </TouchableOpacity>
