@@ -1,19 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { ScrollView, StyleSheet, Text, View, Image, ImageBackground, Pressable } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default function Home({navigation}) {
+export default function Login() {
     return (
         <>
             <LinearGradient
                 colors={['#2E2B69', 'orange', 'red', '#2A12CC']}
                 style={styles.linearGradient}>
-                <MaterialCommunityIcons name="food" size={90} color="white" />
-                <Text style={styles.head}>FOOD <Text style={styles.head2}>DELIVERY</Text></Text>
-                <Pressable style={styles.button} onPress={() => navigation.navigate('Login')}>
-                    <Text style={styles.buttontext}>Continue</Text>
-                </Pressable>
+                    <Text>gcuj</Text>
             </LinearGradient>
         </>
     );
@@ -45,23 +41,23 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     button: {
-        position: 'absolute',
-        bottom: 50,
+        position:'absolute',
+        bottom:50,
         width: '85%',
         height: '5%',
         backgroundColor: '#00FFFF',
-        borderRadius: 8
+        borderRadius:8
     },
-    buttontext: {
-        flex: 1,
-        color: 'black',
+    buttontext:{
+        flex:1,
+        color:'black',
         alignItems: 'center',
-        alignContent: 'center',
-        alignSelf: 'center',
-        fontWeight: 'bold',
-        fontSize: 20,
-        justifyContent: 'center',
-        position: 'relative',
-        marginTop: 5
+        alignContent:'center',
+        alignSelf:'center',
+        fontWeight:'bold',
+        fontSize:20,
+        justifyContent:'center',
+        position:'relative',
+        marginTop:5
     }
 });
