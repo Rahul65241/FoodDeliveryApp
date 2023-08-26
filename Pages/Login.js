@@ -32,9 +32,9 @@ export default function Login({navigation}) {
                         placeholderTextColor="white"
                         onChangeText={text => setPassword(text)} />
                 </View>
-                <TouchableOpacity>
+                {/* <TouchableOpacity>
                     <Text style={styles.forgot}>Forgot Password?</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 <TouchableOpacity
                     style={styles.loginBtn}>
                     <Text style={styles.loginText}>LOGIN INTO ACCOUNT</Text>

@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { ScrollView, StyleSheet, Text, View, Image, ImageBackground, Pressable } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Image, ImageBackground, Pressable, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -11,9 +11,9 @@ export default function Home({navigation}) {
                 style={styles.linearGradient}>
                 <MaterialCommunityIcons name="food" size={90} color="white" />
                 <Text style={styles.head}>FOOD <Text style={styles.head2}>DELIVERY</Text></Text>
-                <Pressable style={styles.button} onPress={() => navigation.navigate('Login')}>
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')}>
                     <Text style={styles.buttontext}>Continue</Text>
-                </Pressable>
+                </TouchableOpacity>
             </LinearGradient>
         </>
     );
