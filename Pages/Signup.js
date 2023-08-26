@@ -7,7 +7,9 @@ const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
 
-export default function Login() {
+export default function Signup({navigation}) {
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     return (
@@ -15,7 +17,25 @@ export default function Login() {
             <LinearGradient
                 colors={['#2E2B69', 'orange', 'red', '#2A12CC']}
                 style={styles.linearGradient}>
-                <Text style={styles.title}> Login <Text style={styles.title2}>Screen</Text></Text>
+                <Text style={styles.title}>Signup <Text style={styles.title2}>Screen</Text></Text>
+                <View style={styles.inputView}>
+                    <TextInput
+                        style={styles.inputText}
+                        placeholder="Name"
+                        placeholderTextColor="white"
+                        autoComplete='off'
+                        onChangeText={text => setName(text)} />
+                </View>
+                <View style={styles.inputView}>
+                    <TextInput
+                        style={styles.inputText}
+                        placeholder="Contact Number"
+                        placeholderTextColor="white"
+                        autoComplete='off'
+                        maxLength={10}
+                        keyboardType='numeric'
+                        onChangeText={text => setPhone(text)} />
+                </View>
                 <View style={styles.inputView}>
                     <TextInput
                         style={styles.inputText}
@@ -32,15 +52,12 @@ export default function Login() {
                         placeholderTextColor="white"
                         onChangeText={text => setPassword(text)} />
                 </View>
-                <TouchableOpacity>
-                    <Text style={styles.forgot}>Forgot Password?</Text>
-                </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.loginBtn}>
-                    <Text style={styles.loginText}>LOGIN INTO ACCOUNT</Text>
+                    <Text style={styles.loginText}>CREATE AN ACCOUNT</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={styles.signup}>Signup</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                    <Text style={styles.signup}>Back to Login</Text>
                 </TouchableOpacity>
             </LinearGradient>
         </>
@@ -78,10 +95,6 @@ const styles = StyleSheet.create({
     inputText: {
         height: 50,
         color: "white",
-    },
-    forgot: {
-        color: "white",
-        fontSize: 11
     },
     signup: {
         color: "white",
