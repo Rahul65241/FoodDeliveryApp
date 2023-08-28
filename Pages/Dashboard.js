@@ -22,7 +22,7 @@ export default function Dashboard({ navigation }) {
                 style={styles.linearGradient}>
                 <ScrollView>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <MaterialCommunityIcons name="menu" size={30} color="white" style={{ marginTop: width * 0.14, marginLeft: 10 }} />
+                        <MaterialCommunityIcons name="menu" onPress={() => navigation.navigate('RegularAccount')} size={30} color="white" style={{ marginTop: width * 0.14, marginLeft: 10 }} />
                         <MaterialCommunityIcons name="shopping-outline" size={30} color="white" style={{ marginTop: width * 0.14, marginRight: 10 }} />
                     </View>
                     <Text style={styles.title}>WELCOME USER!</Text>
@@ -39,6 +39,9 @@ export default function Dashboard({ navigation }) {
                         </Text>
                         <MaterialCommunityIcons name="chevron-double-right" size={34} style={{ marginTop: 15, marginRight: 15 }} />
                     </View>
+                    <Text style={{ fontSize: 20, fontWeight: 'bold', marginLeft: 15, marginTop: 20, color:'red' }}>
+                            Choose from wide range of Collection
+                        </Text>
                     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                         <FlatList horizontal
                             pagingEnabled

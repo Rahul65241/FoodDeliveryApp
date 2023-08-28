@@ -7,6 +7,7 @@ import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import Dashboard from './Pages/Dashboard';
+import RegularAccount from './Pages/RegularAccount';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,6 +38,11 @@ export default function App() {
           name="Dashboard"
           component={Dashboard}
           options={{ title: 'Dashboard' }}
+        />
+        <Stack.Screen
+          name="RegularAccount"
+          component={RegularAccount}
+          options={{ title: 'RegularAccount' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
