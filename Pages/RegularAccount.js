@@ -19,8 +19,8 @@ export default function RegularAccount({ navigation }) {
                 <Text onPress={() => navigation.navigate('Profile')} style={styles.menu}>Profile</Text>
                 <Text style={styles.menu}>Cart</Text>
                 <Text style={styles.menu}>Orders</Text>
-                <Text style={styles.menu}>About Us</Text>
-                <Text style={styles.menu}>Exit</Text>
+                <Text onPress={() => navigation.navigate('About')} style={styles.menu}>About Us</Text>
+                <Text onPress={() => navigation.navigate('Home')} style={styles.menu}>Exit</Text>
             </View>
             </ScrollView>
         </LinearGradient >
