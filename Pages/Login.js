@@ -19,7 +19,7 @@ export default function Login({navigation}) {
                 <View style={styles.inputView}>
                     <TextInput
                         style={styles.inputText}
-                        placeholder="Email"
+                        placeholder="Username"
                         placeholderTextColor="white"
                         autoComplete='off'
                         onChangeText={text => setEmail(text)} />

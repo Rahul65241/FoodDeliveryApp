@@ -18,7 +18,6 @@ export default function About({ navigation }) {
                     Welcome to food delivery App.Here you can can order your favourite 
                     food from wide range of selection and at very affordable price.
                      Get the best deal from your home.Don't miss this chance to get best offer.
-                     
 
                 </Text>
             </ScrollView>

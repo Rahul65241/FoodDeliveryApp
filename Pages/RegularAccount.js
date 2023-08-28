@@ -17,7 +17,7 @@ export default function RegularAccount({ navigation }) {
             <View style={styles.format}>
                 <Text onPress={() => navigation.navigate('Dashboard')} style={styles.menu}>Home</Text>
                 <Text onPress={() => navigation.navigate('Profile')} style={styles.menu}>Profile</Text>
-                <Text style={styles.menu}>Cart</Text>
+                <Text onPress={() => navigation.navigate('Cart')} style={styles.menu}>Cart</Text>
                 <Text style={styles.menu}>Orders</Text>
                 <Text onPress={() => navigation.navigate('About')} style={styles.menu}>About Us</Text>
                 <Text onPress={() => navigation.navigate('Home')} style={styles.menu}>Exit</Text>

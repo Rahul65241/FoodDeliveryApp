@@ -10,7 +10,7 @@ import Dashboard from './Pages/Dashboard';
 import RegularAccount from './Pages/RegularAccount';
 import Profile from './Pages/Profile';
 import About from './Pages/About';
-
+import Cart from './Pages/Cart';
 
 const Stack = createNativeStackNavigator();
 
@@ -56,6 +56,11 @@ export default function App() {
           name="About"
           component={About}
           options={{ title: 'About' }}
+        />
+        <Stack.Screen
+          name="Cart"
+          component={Cart}
+          options={{ title: 'Cart' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

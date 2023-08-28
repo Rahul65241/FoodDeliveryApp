@@ -9,6 +9,7 @@ const height = Dimensions.get('window').height;
 
 export default function Signup({navigation}) {
     const [name, setName] = useState('');
+    const [username, setUsername] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -25,6 +26,14 @@ export default function Signup({navigation}) {
                         placeholderTextColor="white"
                         autoComplete='off'
                         onChangeText={text => setName(text)} />
+                </View>
+                <View style={styles.inputView}>
+                    <TextInput
+                        style={styles.inputText}
+                        placeholder="Username"
+                        placeholderTextColor="white"
+                        autoComplete='off'
+                        onChangeText={text => setUsername(text)} />
                 </View>
                 <View style={styles.inputView}>
                     <TextInput
