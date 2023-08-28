@@ -7,21 +7,17 @@ const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
 
-export default function RegularAccount({ navigation }) {
+export default function Profile({ navigation }) {
     return (
         <LinearGradient
         colors={['#2E2B69', 'orange', 'red', '#2A12CC']}
         style={styles.linearGradient}>
             <ScrollView>
-            <Text style={{marginTop:70, marginLeft:15, fontWeight:'bold', fontSize:30, color:'cyan'}}>USER MENU</Text>
-            <View style={styles.format}>
-                <Text onPress={() => navigation.navigate('Dashboard')} style={styles.menu}>Home</Text>
-                <Text onPress={() => navigation.navigate('Profile')} style={styles.menu}>Profile</Text>
-                <Text style={styles.menu}>Cart</Text>
-                <Text style={styles.menu}>Orders</Text>
-                <Text style={styles.menu}>About Us</Text>
-                <Text style={styles.menu}>Exit</Text>
-            </View>
+            <Text style={styles.head}>User Profile</Text>
+            <Text style={styles.menu}>Name: Rahul Kumar</Text>
+            <Text style={styles.menu}>Email: abc@gmail.com</Text>
+            <Text style={styles.menu}>Contact Number: 0 1 2 3 4 - 5 6 7 8 9</Text>
+
             </ScrollView>
         </LinearGradient >
 
@@ -36,13 +32,13 @@ const styles = StyleSheet.create({
     linearGradient: {
         flex: 1
     },
-    format: {
-        marginTop: 10,
-        marginLeft: 10,
-        backgroundColor:'#525252',
-        borderRadius:8,
-        width:'92%',
-        height:height*0.8,
+    head:{
+        fontSize: 25,
+        color: 'white',
+        marginBottom: 25,
+        fontWeight: 'bold',
+        marginLeft:15,
+        marginTop:70
     },
     menu: {
         fontSize: 20,
@@ -50,7 +46,7 @@ const styles = StyleSheet.create({
         marginBottom: 25,
         fontWeight: 'bold',
         marginLeft:15,
-        marginTop:10
+        marginTop:30
     }
 
 });
