@@ -13,6 +13,28 @@ export default function Signup({navigation}) {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const onSubmit = () => {
+        if (name==""){
+            return alert('Please Enter Your Full Name')
+        }
+        else if (username==""){
+            return alert('Please Set Your Username')
+        }
+        else if (phone==""){
+            return alert('Please Enter Your Phone Number')
+        }
+        else if (email==""){
+            return alert('Please Enter Your Email Address')
+        }
+        else if (password==""){
+            return alert('Please Set Your Password')
+        }
+        else{
+            navigation.navigate('Login'), alert('Account Created Succesfully')
+        }
+    }
+
     return (
         <>
             <LinearGradient
@@ -61,7 +83,7 @@ export default function Signup({navigation}) {
                         placeholderTextColor="white"
                         onChangeText={text => setPassword(text)} />
                 </View>
-                <TouchableOpacity onPress={() => {navigation.navigate('Login'), alert('Account Created Succesfully')}}
+                <TouchableOpacity onPress={onSubmit}
                     style={styles.loginBtn}>
                     <Text style={styles.loginText}>CREATE AN ACCOUNT</Text>
                 </TouchableOpacity>
