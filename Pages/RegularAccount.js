@@ -18,7 +18,7 @@ export default function RegularAccount({ navigation }) {
             colors={['#2E2B69', 'orange', 'red', '#2A12CC']}
             style={styles.linearGradient}>
             <ScrollView>
-                <Pressable onPress={() => navigation.navigate('Dashboard')} style={{ backgroundColor: '#525252', width: '12%', height: '9%', marginTop: 35, borderRadius: 15, marginLeft: 10 }}>
+                <Pressable onPress={() => navigation.navigate('Dashboard')} style={{ backgroundColor: '#525252', width: '12%', height: '9%', marginTop: 40, borderRadius: 15, marginLeft: 10 }}>
                     <MaterialCommunityIcons name="chevron-left" size={50} color={'white'} />
                 </Pressable>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -40,7 +40,7 @@ export default function RegularAccount({ navigation }) {
                         <MaterialCommunityIcons name="shopping-outline" size={27} color={'white'} style={{ marginLeft: 10 }} />
                         <Text style={styles.menu}>Cart</Text>
                     </Pressable>
-                    <Pressable onPress={() => navigation.navigate('')} style={{ flexDirection: 'row' }}>
+                    <Pressable onPress={() => navigation.navigate('Cart')} style={{ flexDirection: 'row' }}>
                         <AntDesign name="shoppingcart" size={25} color={'white'} style={{ marginLeft: 10 }} />
                         <Text style={styles.menu}>Orders</Text>
                     </Pressable>
