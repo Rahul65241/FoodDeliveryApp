@@ -63,7 +63,7 @@ export default function EditProfile({ navigation }) {
                         onChangeText={text => setBio(text)} />
                 </View>
                 </View>
-                <Pressable onPress={() => navigation.navigate('RegularAccount')} style={styles.button}>
+                <Pressable onPress={() => {navigation.navigate('RegularAccount'), alert('Profile Updated Successfully')}} style={styles.button}>
                 <Text style={styles.buttontext}>Update Your Profile</Text>
             </Pressable>
 
