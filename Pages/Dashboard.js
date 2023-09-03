@@ -70,7 +70,7 @@ export default function Dashboard({ navigation }) {
                         <View style={{position:'absolute', bottom:0, backgroundColor:'blue', height:height*0.11, width:width*0.9, alignItems:'center'}}>
                             <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>PANCAKES</Text>
                             <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>₹ 200 Only</Text>
-                            <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>CLICK TO ORDER</Text>
+                            <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>CLICK TO VIEW CART</Text>
 
                         </View>
                     </ImageBackground>
@@ -81,7 +81,7 @@ export default function Dashboard({ navigation }) {
                         <View style={{position:'absolute', bottom:0, backgroundColor:'blue', height:height*0.11, width:width*0.9, alignItems:'center'}}>
                             <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>BURGER</Text>
                             <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>₹ 250 Only</Text>
-                            <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>CLICK TO ORDER</Text>
+                            <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>CLICK TO VIEW CART</Text>
                         </View>
                     </ImageBackground>
                     <ImageBackground
@@ -91,7 +91,7 @@ export default function Dashboard({ navigation }) {
                         <View style={{position:'absolute', bottom:0, backgroundColor:'blue', height:height*0.11, width:width*0.9, alignItems:'center'}}>
                             <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>NOODLES</Text>
                             <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>₹ 200 Only</Text>
-                            <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>CLICK TO ORDER</Text>
+                            <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>CLICK TO VIEW CART</Text>
 
                         </View>
                     </ImageBackground>
