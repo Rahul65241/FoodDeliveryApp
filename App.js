@@ -12,6 +12,7 @@ import Profile from './Pages/Profile';
 import About from './Pages/About';
 import Cart from './Pages/Cart';
 import EditProfile from './Pages/EditProfile';
+import Address from './Pages/Address';
 
 const Stack = createNativeStackNavigator();
 
@@ -67,6 +68,11 @@ export default function App() {
           name="EditProfile"
           component={EditProfile}
           options={{ title: 'EditProfile' }}
+        />
+        <Stack.Screen
+          name="Address"
+          component={Address}
+          options={{ title: 'Address' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

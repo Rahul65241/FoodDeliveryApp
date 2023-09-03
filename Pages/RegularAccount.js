@@ -23,6 +23,7 @@ export default function RegularAccount({ navigation }) {
                 </Pressable>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <View style={styles.photoback}>
+                        <Text style={{color:'white', textAlign:'center', fontSize:45, marginTop:width*0.09, fontWeight:'bold' }}>RK</Text>
                     </View>
                     <Text style={styles.user}>Rahul Kumar{"\n"}Patna, Bihar{"\n"}{"\n"}Food Lover😊😊</Text>
                 </View>
@@ -32,7 +33,7 @@ export default function RegularAccount({ navigation }) {
                         <FontAwesome name="user" size={25} color={'white'} style={{ marginLeft: 10 }} />
                         <Text style={styles.menu}>Personal Info</Text>
                     </Pressable>
-                    <Pressable onPress={() => navigation.navigate('Profile')} style={{ flexDirection: 'row' }}>
+                    <Pressable onPress={() => navigation.navigate('Address')} style={{ flexDirection: 'row' }}>
                         <FontAwesome name="address-book" size={25} color={'white'} style={{ marginLeft: 10 }} />
                         <Text style={styles.menu}>Addresses</Text>
                     </Pressable>
@@ -97,7 +98,7 @@ const styles = StyleSheet.create({
         marginBottom: 25,
         fontWeight: 'bold',
         marginLeft: 10,
-        marginTop: 2
+        marginTop: 2,
     }
 
 });
