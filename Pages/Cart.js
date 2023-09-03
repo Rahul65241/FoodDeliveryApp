@@ -14,7 +14,9 @@ export default function Cart({ navigation }) {
             style={styles.linearGradient}>
             <ScrollView>
                 <Text style={styles.head}>Cart</Text>
-                
+                <View style={styles.format}>
+                    
+                </View>
             </ScrollView>
         </LinearGradient >
 
@@ -37,15 +39,14 @@ const styles = StyleSheet.create({
         marginLeft: 15,
         marginTop: 70,
     },
-    menu: {
-        fontSize: 15,
-        width: '90%',
-        textAlign: 'justify',
-        color: 'white',
-        marginBottom: 25,
-        fontWeight: 'bold',
-        marginLeft: 15,
-        marginTop: 30
-    }
+    format: {
+        flex:1,
+        marginTop: 35,
+        marginLeft: 10,
+        backgroundColor: 'purple',
+        opacity:0.7,
+        borderRadius: 12,
+        width: '95%',
+    },
 
 });
