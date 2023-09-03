@@ -23,7 +23,7 @@ export default function Dashboard({ navigation }) {
                 <ScrollView>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                         <MaterialCommunityIcons name="menu" onPress={() => navigation.navigate('RegularAccount')} size={30} color="white" style={{ marginTop: width * 0.14, marginLeft: 10 }} />
-                        <MaterialCommunityIcons name="shopping-outline" size={30} color="white" style={{ marginTop: width * 0.14, marginRight: 10 }} />
+                        <MaterialCommunityIcons name="shopping-outline" onPress={() => navigation.navigate('Cart')} size={30} color="white" style={{ marginTop: width * 0.14, marginRight: 10 }} />
                     </View>
                     <Text style={styles.title}>WELCOME USER!</Text>
                     <View style={styles.inputView}>
@@ -68,7 +68,7 @@ export default function Dashboard({ navigation }) {
                         style={{ width: width * 0.9, height: height * 0.6, marginTop: 20, marginLeft: 15, marginBottom: 20 }}
                     >
                         <View style={{position:'absolute', bottom:0, backgroundColor:'blue', height:height*0.11, width:width*0.9, alignItems:'center'}}>
-                            <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>CUPCAKES</Text>
+                            <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>PANCAKES</Text>
                             <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>₹ 200 Only</Text>
                             <Text style={{ color:'white', fontWeight: 'bold', fontSize: 20,  }}>CLICK TO ORDER</Text>
 
