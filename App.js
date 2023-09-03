@@ -13,6 +13,7 @@ import About from './Pages/About';
 import Cart from './Pages/Cart';
 import EditProfile from './Pages/EditProfile';
 import Address from './Pages/Address';
+import Order from './Pages/Order';
 
 const Stack = createNativeStackNavigator();
 
@@ -73,6 +74,11 @@ export default function App() {
           name="Address"
           component={Address}
           options={{ title: 'Address' }}
+        />
+        <Stack.Screen
+          name="Order"
+          component={Order}
+          options={{ title: 'Order' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

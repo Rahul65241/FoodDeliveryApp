@@ -41,7 +41,7 @@ export default function RegularAccount({ navigation }) {
                         <MaterialCommunityIcons name="shopping-outline" size={27} color={'white'} style={{ marginLeft: 10 }} />
                         <Text style={styles.menu}>Cart</Text>
                     </Pressable>
-                    <Pressable onPress={() => navigation.navigate('Cart')} style={{ flexDirection: 'row' }}>
+                    <Pressable onPress={() => navigation.navigate('Order')} style={{ flexDirection: 'row' }}>
                         <AntDesign name="shoppingcart" size={25} color={'white'} style={{ marginLeft: 10 }} />
                         <Text style={styles.menu}>Orders</Text>
                     </Pressable>
