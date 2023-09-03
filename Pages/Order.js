@@ -7,7 +7,7 @@ const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
 
-export default function Cart({ navigation }) {
+export default function Order({ navigation }) {
 
     const [cake, setCake] = useState(0);
     const [burger, setBurger] = useState(0);
@@ -45,7 +45,7 @@ export default function Cart({ navigation }) {
             <Pressable onPress={() => navigation.goBack()} style={{ backgroundColor: '#525252', width: '12%', height: '5%', marginTop: 40, borderRadius: 15, marginLeft: 10 }}>
                     <MaterialCommunityIcons name="chevron-left" size={50} color={'white'} />
                 </Pressable>
-                <Text style={styles.head}>Cart</Text>
+                <Text style={styles.head}>My Orders</Text>
                 <View style={styles.format}>
                     <View style={{ flexDirection: 'row' }}>
                         <Image
@@ -53,7 +53,7 @@ export default function Cart({ navigation }) {
                             source={require('../img/pancake.jpeg')}
                         />
                         <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 20, marginLeft: width * 0.03 }}>
-                            PANCAKES{"\n"}₹ 200 ONLY{"\n"}{"\n"}{"\n"}{"\n"} <Text onPress={decrementCountcake}>-</Text>        {cake}        <Text onPress={incrementCountcake}>+</Text>
+                            PANCAKES{"\n"}{"\n"}{"\n"}{"\n"}{"\n"} <Text></Text>
                         </Text>
                     </View>
                 </View>
@@ -64,7 +64,7 @@ export default function Cart({ navigation }) {
                             source={require('../img/burger.jpeg')}
                         />
                         <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 20, marginLeft: width * 0.03 }}>
-                            BURGERS{"\n"}₹ 250 ONLY{"\n"}{"\n"}{"\n"}{"\n"} <Text onPress={decrementCountburger}>-</Text>        {burger}        <Text onPress={incrementCountburger}>+</Text>
+                            BURGERS{"\n"}{"\n"}{"\n"}{"\n"}{"\n"} 
                         </Text>
                     </View>
                 </View>
@@ -76,18 +76,18 @@ export default function Cart({ navigation }) {
                             source={require('../img/noodle.jpeg')}
                         />
                         <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 20, marginLeft: width * 0.03 }}>
-                            NOODLES{"\n"}₹ 200 ONLY{"\n"}{"\n"}{"\n"}{"\n"} <Text onPress={decrementCountnoodle}>-</Text>        {noodle}        <Text onPress={incrementCountnoodle}>+</Text>
+                            NOODLES{"\n"}{"\n"}{"\n"}{"\n"}{"\n"} 
                         </Text>
                     </View>
                 </View>
 
                 <View style={styles.format}>
-                    <Text style={{ textAlign:'right', marginTop:10, marginBottom:10, marginRight:15, fontWeight:"bold", fontSize:20}}>Total <Text style={{color:'white'}}>Price: {(burger*250)+(noodle*200)+(cake*200)}</Text></Text>
+                    <Text style={{ textAlign:'right', marginTop:10, marginBottom:10, marginRight:15, fontWeight:"bold", fontSize:20}}>Total <Text style={{color:'white'}}>Paid: {(burger*250)+(noodle*200)+(cake*200)}</Text></Text>
                 </View>
 
-                <Pressable onPress={() => {navigation.navigate('RegularAccount'), alert('ORDER PLACED SUCCESFULLY')}} style={styles.button}>
+                {/* <Pressable onPress={() => {navigation.navigate('RegularAccount'), alert('ORDER PLACED SUCCESFULLY')}} style={styles.button}>
                 <Text style={styles.buttontext}>ORDER <Text style={{color:'black'}}>NOW</Text></Text>
-            </Pressable>
+            </Pressable> */}
 
 
             </ScrollView>

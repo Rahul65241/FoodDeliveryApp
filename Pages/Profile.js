@@ -19,6 +19,8 @@ export default function Profile({ navigation }) {
                 </Pressable>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <View style={styles.photoback}>
+                    <Text style={{color:'white', textAlign:'center', fontSize:45, marginTop:width*0.09, fontWeight:'bold' }}>RK</Text>
+
                     </View>
                     <Text style={styles.user}>Rahul Kumar{"\n"}Patna, Bihar{"\n"}{"\n"}Food Lover😊😊</Text>
                 </View>

@@ -24,6 +24,8 @@ export default function EditProfile({ navigation }) {
                     <MaterialCommunityIcons name="chevron-left" size={50} color={'white'} />
                 </Pressable>
                     <View style={styles.photoback}>
+                    <Text style={{color:'white', textAlign:'center', fontSize:65, marginTop:width*0.14, fontWeight:'bold' }}>RK</Text>
+
                     </View>
                     <View style={{ marginLeft: width*0.09, marginTop:40}}>
                     <View style={styles.inputView}>
@@ -63,7 +65,7 @@ export default function EditProfile({ navigation }) {
                         onChangeText={text => setBio(text)} />
                 </View>
                 </View>
-                <Pressable onPress={() => navigation.navigate('RegularAccount')} style={styles.button}>
+                <Pressable onPress={() => {navigation.navigate('RegularAccount'), alert('Profile Updated Successfully')}} style={styles.button}>
                 <Text style={styles.buttontext}>Update Your Profile</Text>
             </Pressable>
 
