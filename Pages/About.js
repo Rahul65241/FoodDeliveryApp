@@ -23,6 +23,9 @@ export default function About({ navigation }) {
                     food from wide range of selection and at very affordable price.
                      Get the best deal from your home.Don't miss this chance to get best offer.
                 </Text>
+                     <Text style={{color:'white', marginLeft:15, marginTop:width*0.07}}>Contact No - (+123) 4 5 6 7 8 9 0 </Text>
+                     <Text style={{color:'white', marginLeft:15, marginTop:width*0.02, marginBottom:width*0.04}}>Email Id - abc@gmail.com </Text>
+
                 </View>
             </ScrollView>
         </LinearGradient >
