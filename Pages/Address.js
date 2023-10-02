@@ -15,6 +15,58 @@ export default function Address({ navigation }) {
     const [city, setCity] = useState('');
     const [zip, setZip] = useState('');
     const [country, setCountry] = useState('');
+    const [ value, setValue ] = useState('1')
+
+    const AddAddress = () => {
+        return(
+        <>
+        <View style={styles.inputView}>
+        <TextInput
+            style={styles.inputText}
+            placeholder="Address 1"
+            placeholderTextColor="white"
+            autoComplete='off'
+            onChangeText={text => setAddress1(text)} />
+    </View>
+    <View style={styles.inputView}>
+        <TextInput
+            style={styles.inputText}
+            placeholder="Address 2"
+            placeholderTextColor="white"
+            autoComplete='off'
+            onChangeText={text => setAddress2(text)} />
+    </View>
+    <View style={styles.inputView}>
+        <TextInput
+            style={styles.inputText}
+            placeholder="City"
+            placeholderTextColor="white"
+            autoComplete='off'
+            onChangeText={text => setCity(text)} />
+    </View>
+    <View style={styles.inputView}>
+        <TextInput
+            style={styles.inputText}
+            placeholder="Zip Code"
+            placeholderTextColor="white"
+            autoComplete='off'
+            keyboardType='numeric'
+            onChangeText={text => setZip(text)} />
+    </View>
+    <View style={styles.inputView}>
+        <TextInput
+            style={styles.inputText}
+            placeholder="Country"
+            placeholderTextColor="white"
+            onChangeText={text => setCountry(text)} />
+    </View>
+
+    <Pressable onPress={() => { navigation.navigate('RegularAccount'), alert('Address Added Successfully') }} style={styles.button}>
+        <Text style={styles.buttontext}>Submit</Text>
+    </Pressable>
+        </>
+        )
+    }
 
 
     return (
@@ -32,50 +84,25 @@ export default function Address({ navigation }) {
                     </View>
                     <Text style={styles.user}>Rahul Kumar{"\n"}Patna, Bihar{"\n"}{"\n"}Food Lover😊😊</Text>
                 </View>
-                <View style={styles.inputView}>
-                    <TextInput
-                        style={styles.inputText}
-                        placeholder="Address 1"
-                        placeholderTextColor="white"
-                        autoComplete='off'
-                        onChangeText={text => setAddress1(text)} />
+                {value=='1'?
+                <>
+                <Pressable>
+                <View style={styles.ViewButton}>
+                    <Text>
+                        View Saved Addresses
+                    </Text>
                 </View>
-                <View style={styles.inputView}>
-                    <TextInput
-                        style={styles.inputText}
-                        placeholder="Address 2"
-                        placeholderTextColor="white"
-                        autoComplete='off'
-                        onChangeText={text => setAddress2(text)} />
-                </View>
-                <View style={styles.inputView}>
-                    <TextInput
-                        style={styles.inputText}
-                        placeholder="City"
-                        placeholderTextColor="white"
-                        autoComplete='off'
-                        onChangeText={text => setCity(text)} />
-                </View>
-                <View style={styles.inputView}>
-                    <TextInput
-                        style={styles.inputText}
-                        placeholder="Zip Code"
-                        placeholderTextColor="white"
-                        autoComplete='off'
-                        keyboardType='numeric'
-                        onChangeText={text => setZip(text)} />
-                </View>
-                <View style={styles.inputView}>
-                    <TextInput
-                        style={styles.inputText}
-                        placeholder="Country"
-                        placeholderTextColor="white"
-                        onChangeText={text => setCountry(text)} />
-                </View>
-
-                <Pressable onPress={() => {navigation.navigate('RegularAccount'),alert('Address Updated Successfully')}} style={styles.button}>
-                    <Text style={styles.buttontext}>Submit</Text>
                 </Pressable>
+                <Pressable onPress={()=>setValue('0')}>
+                <View style={styles.ViewButton2}>
+                    <Text>
+                        Add New Address
+                    </Text>
+                </View>
+                </Pressable></>
+                :
+                <AddAddress></AddAddress>}
+
 
             </ScrollView>
         </LinearGradient >
@@ -113,8 +140,8 @@ const styles = StyleSheet.create({
         height: 50,
         justifyContent: "center",
         padding: 20,
-        alignSelf:'center',
-        marginTop:width*0.08
+        alignSelf: 'center',
+        marginTop: width * 0.08
     },
     inputText: {
         height: 50,
@@ -150,6 +177,28 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginLeft: 15,
         marginTop: 20
+    },
+    ViewButton:
+    {
+        alignSelf: 'center',
+        marginTop: width * 0.3,
+        backgroundColor: '#2196F3',
+        width: width * 0.5,
+        height: height * 0.04,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius:8
+    },
+    ViewButton2:
+    {
+        alignSelf: 'center',
+        marginTop: width * 0.1,
+        backgroundColor: '#2196F3',
+        width: width * 0.5,
+        height: height * 0.04,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius:8
     }
 
 });
