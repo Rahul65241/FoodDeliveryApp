@@ -58,7 +58,7 @@ export default function EditProfile({ navigation }) {
             colors={['#2E2B69', 'orange', 'red', '#2A12CC']}
             style={styles.linearGradient}>
             <ScrollView>
-                <Pressable onPress={() => navigation.navigate('RegularAccount')} style={{ backgroundColor: '#525252', width: '12%', height: '9%', marginTop: 40, borderRadius: 15, marginLeft: 10 }}>
+                <Pressable onPress={() => navigation.navigate('RegularAccount')} style={{ backgroundColor: '#525252', width: '12%', height: '7%', marginTop: 40, borderRadius: 15, marginLeft: 10 }}>
                     <MaterialCommunityIcons name="chevron-left" size={50} color={'white'} />
                 </Pressable>
                 {pickedImagePath == '' || pickedImagePath == undefined || pickedImagePath == null ?
