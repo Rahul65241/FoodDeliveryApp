@@ -11,6 +11,8 @@
   "dependencies": {
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",
+    "axios": "^1.5.1",
+    "cors": "^2.8.5",
     "expo": "~49.0.8",
     "expo-image-picker": "~14.3.2",
     "expo-linear-gradient": "~12.3.0",
