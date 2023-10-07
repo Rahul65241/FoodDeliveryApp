@@ -15,60 +15,8 @@ export default function Signup({ navigation }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const onSubmit = () => {
-        if (name == "") {
-            return alert('Please Enter Your Full Name')
-        }
-        if (username == "") {
-            return alert('Please Set Your Username')
-        }
-        if (phone == "") {
-            return alert('Please Enter Your Phone Number')
-        }
-        if (email == "") {
-            return alert('Please Enter Your Email Address')
-        }
-        if (password == "") {
-            return alert('Please Set Your Password')
-        }
-
-        let data = new FormData();
-        data.append('name', name);
-        data.append('username', username);
-        data.append('contact', phone);
-        data.append('email', email);
-        data.append('password', password);
-
-        axios({
-          method: 'POST',
-          url: 'http://localhost/Food%20Delivery/register.php',
-          //data: data,
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'multipart/form-data'
-          },
-    
-    
-        })
-
-          .then(function (response) {
-            // console.log("response", response);
-            if (response.data.status_code == 1) {
-               alert(response.data.message)
-    
-            }
-            else {
-              alert("Invalid Phone Number Please Enter Valid Mobile number ")
-            }
-          })
-          .catch(function (response) {
-            console.log("error response 88", response);
-    
-          });
-      }
 
     const onRegister = async () => {
-        console.log('hello');
         if (name == "") {
             return alert('Please Enter Your Full Name')
         }
@@ -90,7 +38,6 @@ export default function Signup({ navigation }) {
         data2.append('contact', phone);
         data2.append('email', email);
         data2.append('password', password);
-        console.log(data2);
         try {
             const { data } = await axios({
                 method: 'POST',

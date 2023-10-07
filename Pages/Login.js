@@ -5,11 +5,50 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
+import axios from "axios";
 
 
 export default function Login({navigation}) {
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    const onLogin = async () => {
+        if (username == "") {
+            return alert('Please Enter Your Username')
+        }
+        if (password == "") {
+            return alert('Please Enter Your Password')
+        }
+        let data2 = new FormData();
+        data2.append('username', username);
+        data2.append('password', password);
+        try {
+            const { data } = await axios({
+                method: 'POST',
+                url: 'http://10.0.2.2/Food%20Delivery/login.php',
+                data: data2,
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
+            console.log('bye');
+            console.log("data",data);
+            if(data.status_code==1){
+                navigation.navigate('Dashboard')
+            }
+            alert(data.message)
+
+        } catch (err) {
+            console.log("195", err);
+            if (err.response.status === 404) {
+                console.log('Resource could not be found!');
+            }
+
+        }
+    };
+
+
     return (
         <>
             <LinearGradient
@@ -22,7 +61,7 @@ export default function Login({navigation}) {
                         placeholder="Username"
                         placeholderTextColor="white"
                         autoComplete='off'
-                        onChangeText={text => setEmail(text)} />
+                        onChangeText={text => setUsername(text)} />
                 </View>
                 <View style={styles.inputView}>
                     <TextInput
@@ -35,7 +74,7 @@ export default function Login({navigation}) {
                 {/* <TouchableOpacity>
                     <Text style={styles.forgot}>Forgot Password?</Text>
                 </TouchableOpacity> */}
-                <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}
+                <TouchableOpacity onPress={() => onLogin()}
                     style={styles.loginBtn}>
                     <Text style={styles.loginText}>LOGIN INTO ACCOUNT</Text>
                 </TouchableOpacity>
