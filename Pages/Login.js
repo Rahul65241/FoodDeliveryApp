@@ -6,7 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 import axios from "axios";
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Login({navigation}) {
     const [username, setUsername] = useState('');
@@ -35,6 +35,7 @@ export default function Login({navigation}) {
             console.log("data",data);
             if(data.status_code==1){
                 navigation.navigate('Dashboard')
+                AsyncStorage.setItem('userdata', JSON.stringify(data.data));
             }
             alert(data.message)
 

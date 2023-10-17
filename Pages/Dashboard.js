@@ -1,19 +1,52 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ScrollView, StyleSheet, Text, View, Image, ImageBackground, Dimensions, TextInput, TouchableOpacity, FlatList, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function Dashboard({ navigation }) {
     const [name, setName] = useState('');
+    const [username, setUsername] = useState('');
+
     const [images, setImages] = useState([
         require('../img/4.jpg'),
         require('../img/5.jpg'),
         require('../img/6.jpg'),
     ])
+
+    const getData = async (key) => {
+        // get Data from Storage
+        try {
+            const data = await AsyncStorage.getItem(key);
+            if (data !== null) {
+                // console.log(data);
+                return data;
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    
+    const getDetails = async () => {
+        await getData("userdata")
+        .then(data => data)
+        .then(value => {
+          const t = JSON.parse(value);
+          console.log("userdata",t);
+          setUsername(t.name);
+          })
+          .catch(err =>err)
+      }
+
+
+      useEffect(() => {
+        getDetails();
+      }, [])
+
 
     return (
         <>
@@ -25,7 +58,7 @@ export default function Dashboard({ navigation }) {
                         <MaterialCommunityIcons name="menu" onPress={() => navigation.navigate('RegularAccount')} size={30} color="white" style={{ marginTop: width * 0.14, marginLeft: 10 }} />
                         <MaterialCommunityIcons name="shopping-outline" onPress={() => navigation.navigate('Cart')} size={30} color="white" style={{ marginTop: width * 0.14, marginRight: 10 }} />
                     </View>
-                    <Text style={styles.title}>WELCOME USER!</Text>
+                    <Text style={styles.title}>WELCOME {username}!</Text>
                     <View style={styles.inputView}>
                         <TextInput
                             style={styles.inputText}
