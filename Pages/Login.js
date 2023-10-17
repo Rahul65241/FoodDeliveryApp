@@ -32,7 +32,6 @@ export default function Login({navigation}) {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-            console.log('bye');
             console.log("data",data);
             if(data.status_code==1){
                 navigation.navigate('Dashboard')
